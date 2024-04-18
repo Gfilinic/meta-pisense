@@ -2,7 +2,9 @@ DESCRIPTION = "Custom Raspberry Pi image with simple GUI for collecting temperat
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-inherit core-image-weston
+inherit core-image
+
+IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs weston"
 
 # Set passwords for root and pi users
 USER_PASSWORD_ROOT = "root"
@@ -17,3 +19,7 @@ EXTRA_USERS_PARAMS = "usermod -P '${USER_HASH_ROOT}' root; \
 # Add your custom application package to be installed
 #IMAGE_INSTALL_append = " my-app"
 
+CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
+CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
+
+QB_MEM = "-m 512"
