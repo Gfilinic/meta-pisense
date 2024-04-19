@@ -17,9 +17,9 @@ EXTRA_USERS_PARAMS = "usermod -P '${USER_HASH_ROOT}' root; \
 
 
 # Add your custom application package to be installed
-#IMAGE_INSTALL_append = " my-app"
+IMAGE_INSTALL += " ssh-config"
 
-CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
+#CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
 CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
 
 QB_MEM = "-m 512"
