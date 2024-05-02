@@ -15,7 +15,7 @@ EXTRA_USERS_PARAMS = "\
 
 
 # Add your custom application package to be installed
-IMAGE_INSTALL += " ssh-config"
+IMAGE_INSTALL += " test-sensor"
 
 #CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
 CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
