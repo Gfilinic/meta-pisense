@@ -15,7 +15,7 @@ EXTRA_USERS_PARAMS = "\
 
 
 # Add your custom application package to be installed
-IMAGE_INSTALL += " raspi-gpio dhtxxd"
+IMAGE_INSTALL += " raspi-gpio dht22 hupitp"
 
 #CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
 CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"

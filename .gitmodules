@@ -10,3 +10,9 @@
 [submodule "sources/poky"]
 	path = sources/poky
 	url = git://git.yoctoproject.org/poky
+[submodule "sources/meta-pisense/recipes-sensor/hupitp/files"]
+	path = sources/meta-pisense/recipes-sensor/hupitp/files
+	url = https://github.com/Gfilinic/HuPiTp.git
+[submodule "sources/meta-pisense/recipes-sensor/hupitp/sources/meta-pisense/recipes-sensor/hupitp/files"]
+	path = sources/meta-pisense/recipes-sensor/hupitp/sources/meta-pisense/recipes-sensor/hupitp/files
+	url = https://github.com/Gfilinic/HuPiTp.git
