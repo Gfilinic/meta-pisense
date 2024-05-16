@@ -15,9 +15,18 @@ EXTRA_USERS_PARAMS = "\
 
 
 # Add your custom application package to be installed
-IMAGE_INSTALL += " raspi-gpio dht22 hupitp"
-
+IMAGE_INSTALL += "raspi-gpio \
+		  dht22 \
+		  hupitp \
+		  ${Qt_UTILS}"
+		   
+Qt_UTILS = "qtbase \
+            qtquick3d \
+            qtdeclarative \
+            qtwayland"
+RDEPENDS_${PN} = "qtwayland"      
+PACKAGECONFIG += " qtwayland wayland libinput fontconfig"
 #CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
-CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
+QT_QPA_PLATFORM = "wayland"
 
 QB_MEM = "-m 512"

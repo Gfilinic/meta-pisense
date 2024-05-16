@@ -14,7 +14,9 @@ SRC_URI = "file://CMakeLists.txt \
 	   file://Main.qml \
 	   file://Temperature.qml"
 
-DEPENDS += " wiringpi qtquick3d qtdeclarative qtdeclarative-native qtbase qtwayland"
+DEPENDS += " wiringpi qtquick3d qtdeclarative qtdeclarative-native qtbase"
+
+RDEPENDS_${PN} += " libxcursor qtwayland"
 
 inherit qt6-cmake
 
