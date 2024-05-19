@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 inherit core-image
 
 
-IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs weston"
+IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs weston "
 
 inherit extrausers
 PASSWD = "\$6\$JwrqgzUt5N2MjceA\$xxSg85lwTFCVG6lVxnHeu42bPZr114GYj/8NlPV6myHrGn9xwL0lX9nupwShZv8izDCMXABI7zXI0SiIzO00x."
@@ -23,10 +23,12 @@ IMAGE_INSTALL += "raspi-gpio \
 Qt_UTILS = "qtbase \
             qtquick3d \
             qtdeclarative \
-            qtwayland"
+            qtwayland \
+            qtgraphs"
+            
 RDEPENDS_${PN} = "qtwayland"      
 PACKAGECONFIG += " qtwayland wayland libinput fontconfig"
-#CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
+
 QT_QPA_PLATFORM = "wayland"
 
 QB_MEM = "-m 512"
