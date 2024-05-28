@@ -16,3 +16,10 @@
 [submodule "sources/meta-pisense/recipes-sensor/hupitp/sources/meta-pisense/recipes-sensor/hupitp/files"]
 	path = sources/meta-pisense/recipes-sensor/hupitp/sources/meta-pisense/recipes-sensor/hupitp/files
 	url = https://github.com/Gfilinic/HuPiTp.git
+[submodule "sources/meta-pisense/recipes-sensor/wiringpi/files"]
+	path = sources/meta-pisense/recipes-sensor/wiringpi/files
+	url = https://github.com/Gfilinic/WiringPi-CMake.git
+
+[submodule "sources/meta-pisense/recipes-sensor/dht22/files"]
+	path = sources/meta-pisense/recipes-sensor/dht22/files
+	url = https://github.com/wookookie/DHT22.git
