@@ -11,13 +11,18 @@ SRC_URI = "file://CMakeLists.txt \
 	   file://dht22.h \
 	   file://Humidity.qml \
 	   file://main.cpp \
+     file://mainwindow.cpp \
+     file://mainwindow.h \
+     file://mainwindow.ui \
+     file://resources.qrc \
+     file://customchartview.h \
+     file://customchartview.cpp \
 	   file://Main.qml \
 	   file://Temperature.qml \
-	   file://Statistic.qml \
 	   file://Log.qml"
 
 
-DEPENDS += "wiringpi qtquick3d qtdeclarative qtdeclarative-native qtbase qtgraphs qtquick3d-native"
+DEPENDS += "wiringpi qtquick3d qtdeclarative qtdeclarative-native qtbase qtcharts qtquick3d-native"
 RDEPENDS_${PN} += "libxcursor qtwayland qtquick3d-tools"
 
 

@@ -19,12 +19,13 @@ IMAGE_INSTALL += "raspi-gpio \
 		  dht22 \
 		  hupitp \
 		  ${Qt_UTILS}"
+		  
 		   
 Qt_UTILS = "qtbase \
             qtquick3d \
             qtdeclarative \
             qtwayland \
-            qtgraphs"
+            qtcharts"
             
 RDEPENDS_${PN} = "qtwayland"      
 PACKAGECONFIG += " qtwayland wayland libinput fontconfig"
