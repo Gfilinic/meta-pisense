@@ -18,6 +18,7 @@ EXTRA_USERS_PARAMS = "\
 IMAGE_INSTALL += "raspi-gpio \
 		  dht22 \
 		  hupitp \
+		  autostart-weston \
 		  ${Qt_UTILS}"
 		  
 		   
@@ -28,8 +29,6 @@ Qt_UTILS = "qtbase \
             qtcharts"
             
 RDEPENDS_${PN} = "qtwayland"      
-PACKAGECONFIG += " qtwayland wayland libinput fontconfig"
-
-QT_QPA_PLATFORM = "wayland"
+PACKAGECONFIG += " qtwayland wayland libinput fontconfig kms"
 
 QB_MEM = "-m 512"
