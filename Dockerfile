@@ -29,13 +29,19 @@ COPY . .
 
 # Initialize and update submodules (assuming you have submodules to initialize)
 RUN git config --global \
-      url."https://github.com/openembedded/".insteadOf \
-      "git://git.openembedded.org/" \
+      url."https://github.com/openembedded/meta-openembedded.git".insteadOf \
+      "git://git.openembedded.org/meta-openembedded" \
     && git config --global \
-      url."https://github.com/yoctoproject/".insteadOf \
-      "git://git.yoctoproject.org/" \
+      url."https://github.com/yoctoproject/poky.git".insteadOf \
+      "git://git.yoctoproject.org/poky" \
+    && git config --global \
+      url."https://github.com/agherzan/meta-raspberrypi.git".insteadOf \
+      "git://git.yoctoproject.org/meta-raspberrypi" \
+    && git config --global \
+      url."https://code.qt.io/yocto/meta-qt6.git".insteadOf \
+      "git://code.qt.io/yocto/meta-qt6.git" \
     && git submodule update --init --recursive
-
+    
 # Set up locale (optional, adjust as needed)
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
