@@ -28,7 +28,13 @@ WORKDIR /meta-pisense
 COPY . .
 
 # Initialize and update submodules (assuming you have submodules to initialize)
-RUN git submodule update --init --recursive
+RUN git config --global \
+      url."https://github.com/openembedded/".insteadOf \
+      "git://git.openembedded.org/" \
+    && git config --global \
+      url."https://github.com/yoctoproject/".insteadOf \
+      "git://git.yoctoproject.org/" \
+    && git submodule update --init --recursive
 
 # Set up locale (optional, adjust as needed)
 RUN locale-gen en_US.UTF-8
